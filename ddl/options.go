@@ -18,7 +18,7 @@ import (
 
 	"github.com/ngaut/pools"
 	"github.com/pingcap/tidb/infoschema"
-	"github.com/pingcap/tidb/kv"
+	"github.com/shafreeck/tidbit/kv"
 	"go.etcd.io/etcd/clientv3"
 )
 

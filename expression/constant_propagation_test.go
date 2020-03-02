@@ -18,11 +18,11 @@ import (
 
 	. "github.com/pingcap/check"
 	"github.com/pingcap/tidb/domain"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/sessionctx"
 	"github.com/pingcap/tidb/util/mock"
 	"github.com/pingcap/tidb/util/testkit"
 	"github.com/pingcap/tidb/util/testutil"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var _ = Suite(&testSuite{})

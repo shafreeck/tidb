@@ -28,7 +28,6 @@ import (
 	"github.com/pingcap/parser/mysql"
 	"github.com/pingcap/parser/terror"
 	"github.com/pingcap/tidb/domain"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/planner/core"
 	"github.com/pingcap/tidb/privilege"
 	"github.com/pingcap/tidb/privilege/privileges"
@@ -39,6 +38,7 @@ import (
 	"github.com/pingcap/tidb/util/testkit"
 	"github.com/pingcap/tidb/util/testleak"
 	"github.com/pingcap/tidb/util/testutil"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 func TestT(t *testing.T) {

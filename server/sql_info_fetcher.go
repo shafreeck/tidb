@@ -33,8 +33,8 @@ import (
 	"github.com/pingcap/tidb/domain"
 	"github.com/pingcap/tidb/session"
 	"github.com/pingcap/tidb/statistics/handle"
-	"github.com/pingcap/tidb/store/tikv"
 	"github.com/pingcap/tidb/util/sqlexec"
+	"github.com/shafreeck/tidbit/tikv"
 )
 
 type sqlInfoFetcher struct {

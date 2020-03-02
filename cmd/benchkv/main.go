@@ -27,10 +27,10 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/log"
 	"github.com/pingcap/parser/terror"
-	"github.com/pingcap/tidb/kv"
-	"github.com/pingcap/tidb/store/tikv"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/shafreeck/tidbit/kv"
+	"github.com/shafreeck/tidbit/tikv"
 	"go.uber.org/zap"
 )
 

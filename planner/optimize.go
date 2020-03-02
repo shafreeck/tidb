@@ -24,7 +24,6 @@ import (
 	"github.com/pingcap/tidb/bindinfo"
 	"github.com/pingcap/tidb/domain"
 	"github.com/pingcap/tidb/infoschema"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/metrics"
 	"github.com/pingcap/tidb/planner/cascades"
 	plannercore "github.com/pingcap/tidb/planner/core"
@@ -33,6 +32,7 @@ import (
 	"github.com/pingcap/tidb/sessionctx/stmtctx"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/logutil"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 // Optimize does optimization and creates a Plan.

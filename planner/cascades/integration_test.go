@@ -15,11 +15,11 @@ package cascades_test
 
 import (
 	. "github.com/pingcap/check"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/session"
 	"github.com/pingcap/tidb/store/mockstore"
 	"github.com/pingcap/tidb/util/testkit"
 	"github.com/pingcap/tidb/util/testutil"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var _ = Suite(&testIntegrationSuite{})

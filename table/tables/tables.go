@@ -28,7 +28,6 @@ import (
 	"github.com/pingcap/errors"
 	"github.com/pingcap/parser/model"
 	"github.com/pingcap/parser/mysql"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/meta"
 	"github.com/pingcap/tidb/meta/autoid"
 	"github.com/pingcap/tidb/sessionctx"
@@ -43,6 +42,7 @@ import (
 	"github.com/pingcap/tidb/util/logutil"
 	"github.com/pingcap/tidb/util/stringutil"
 	"github.com/pingcap/tipb/go-binlog"
+	"github.com/shafreeck/tidbit/kv"
 	"github.com/spaolacci/murmur3"
 	"go.uber.org/zap"
 )

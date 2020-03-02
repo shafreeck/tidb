@@ -20,8 +20,8 @@ import (
 
 	. "github.com/pingcap/check"
 	"github.com/pingcap/tidb/sessionctx/variable"
-	"github.com/pingcap/tidb/store/tikv/oracle"
 	"github.com/pingcap/tidb/util/testleak"
+	"github.com/shafreeck/tidbit/tikv/oracle"
 )
 
 type leaseGrantItem struct {

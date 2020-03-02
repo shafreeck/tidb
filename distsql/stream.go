@@ -19,7 +19,6 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/parser/terror"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/metrics"
 	"github.com/pingcap/tidb/sessionctx"
 	"github.com/pingcap/tidb/statistics"
@@ -27,6 +26,7 @@ import (
 	"github.com/pingcap/tidb/util/chunk"
 	"github.com/pingcap/tidb/util/codec"
 	"github.com/pingcap/tipb/go-tipb"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 // streamResult implements the SelectResult interface.

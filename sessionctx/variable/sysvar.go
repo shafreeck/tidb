@@ -21,7 +21,7 @@ import (
 	"github.com/pingcap/parser/mysql"
 	"github.com/pingcap/parser/terror"
 	"github.com/pingcap/tidb/config"
-	"github.com/pingcap/tidb/kv"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 // ScopeFlag is for system variable whether can be changed in global/session dynamically or not.

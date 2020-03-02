@@ -31,7 +31,6 @@ import (
 	"github.com/pingcap/tidb/distsql"
 	"github.com/pingcap/tidb/expression"
 	"github.com/pingcap/tidb/expression/aggregation"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/sessionctx/stmtctx"
 	"github.com/pingcap/tidb/tablecodec"
 	"github.com/pingcap/tidb/types"
@@ -42,6 +41,7 @@ import (
 	"github.com/pingcap/tidb/util/rowcodec"
 	"github.com/pingcap/tidb/util/timeutil"
 	"github.com/pingcap/tipb/go-tipb"
+	"github.com/shafreeck/tidbit/kv"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 )

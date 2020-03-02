@@ -19,8 +19,8 @@ import (
 
 	"github.com/pingcap/tidb/metrics"
 	"github.com/pingcap/tidb/sessionctx/variable"
-	"github.com/pingcap/tidb/store/tikv/oracle"
 	"github.com/pingcap/tidb/util/logutil"
+	"github.com/shafreeck/tidbit/tikv/oracle"
 	"go.uber.org/zap"
 )
 

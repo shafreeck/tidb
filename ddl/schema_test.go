@@ -22,11 +22,11 @@ import (
 	"github.com/pingcap/parser/model"
 	"github.com/pingcap/parser/terror"
 	"github.com/pingcap/tidb/infoschema"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/meta"
 	"github.com/pingcap/tidb/sessionctx"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/mock"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var _ = Suite(&testSchemaSuite{})

@@ -27,9 +27,9 @@ import (
 	"github.com/pingcap/parser/ast"
 	"github.com/pingcap/parser/mysql"
 	"github.com/pingcap/tidb/config"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/timeutil"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 // secondsPerYear represents seconds in a normal year. Leap year is not considered here.

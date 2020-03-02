@@ -19,7 +19,6 @@ import (
 
 	. "github.com/pingcap/check"
 	"github.com/pingcap/parser/mysql"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/sessionctx"
 	"github.com/pingcap/tidb/sessionctx/stmtctx"
 	"github.com/pingcap/tidb/sessionctx/variable"
@@ -36,6 +35,7 @@ import (
 	"github.com/pingcap/tidb/util/stringutil"
 	"github.com/pingcap/tidb/util/testleak"
 	"github.com/pingcap/tipb/go-tipb"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var _ = Suite(&testSuite{})

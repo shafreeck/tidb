@@ -35,7 +35,6 @@ import (
 	testddlutil "github.com/pingcap/tidb/ddl/testutil"
 	"github.com/pingcap/tidb/domain"
 	"github.com/pingcap/tidb/infoschema"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/meta/autoid"
 	"github.com/pingcap/tidb/session"
 	"github.com/pingcap/tidb/sessionctx"
@@ -51,6 +50,7 @@ import (
 	"github.com/pingcap/tidb/util/mock"
 	"github.com/pingcap/tidb/util/testkit"
 	"github.com/pingcap/tidb/util/testutil"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 const (

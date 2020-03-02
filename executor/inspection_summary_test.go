@@ -22,10 +22,10 @@ import (
 	"github.com/pingcap/tidb/domain"
 	"github.com/pingcap/tidb/executor"
 	"github.com/pingcap/tidb/infoschema"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/set"
 	"github.com/pingcap/tidb/util/testkit"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var _ = SerialSuites(&inspectionSummarySuite{})

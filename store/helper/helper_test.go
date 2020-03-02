@@ -27,8 +27,8 @@ import (
 	"github.com/pingcap/tidb/store/helper"
 	"github.com/pingcap/tidb/store/mockstore"
 	"github.com/pingcap/tidb/store/mockstore/mocktikv"
-	"github.com/pingcap/tidb/store/tikv"
 	"github.com/pingcap/tidb/util/pdapi"
+	"github.com/shafreeck/tidbit/tikv"
 	"go.uber.org/zap"
 )
 

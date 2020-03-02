@@ -24,7 +24,6 @@ import (
 	"github.com/pingcap/parser/terror"
 	"github.com/pingcap/tidb/executor"
 	"github.com/pingcap/tidb/infoschema"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/metrics"
 	"github.com/pingcap/tidb/planner/core"
 	"github.com/pingcap/tidb/session"
@@ -33,6 +32,7 @@ import (
 	"github.com/pingcap/tidb/util/testleak"
 	"github.com/prometheus/client_golang/prometheus"
 	dto "github.com/prometheus/client_model/go"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var _ = Suite(&testPrepareSuite{})

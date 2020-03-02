@@ -23,7 +23,6 @@ import (
 	"github.com/pingcap/parser"
 	"github.com/pingcap/tidb/domain"
 	"github.com/pingcap/tidb/expression"
-	"github.com/pingcap/tidb/kv"
 	plannercore "github.com/pingcap/tidb/planner/core"
 	"github.com/pingcap/tidb/session"
 	"github.com/pingcap/tidb/sessionctx"
@@ -35,6 +34,7 @@ import (
 	"github.com/pingcap/tidb/util/testkit"
 	"github.com/pingcap/tidb/util/testleak"
 	"github.com/pingcap/tidb/util/testutil"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 func TestT(t *testing.T) {

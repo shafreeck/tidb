@@ -20,9 +20,9 @@ import (
 
 	. "github.com/pingcap/check"
 	"github.com/pingcap/tidb/domain"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/session"
 	"github.com/pingcap/tidb/store/mockstore"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var _ = SerialSuites(&testMemoryLeak{})

@@ -28,11 +28,11 @@ import (
 	"github.com/pingcap/tidb-tools/tidb-binlog/node"
 	pumpcli "github.com/pingcap/tidb-tools/tidb-binlog/pump_client"
 	"github.com/pingcap/tidb/config"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/metrics"
 	"github.com/pingcap/tidb/sessionctx"
 	"github.com/pingcap/tidb/util/logutil"
 	"github.com/pingcap/tipb/go-binlog"
+	"github.com/shafreeck/tidbit/kv"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 )

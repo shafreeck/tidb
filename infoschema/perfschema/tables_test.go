@@ -29,11 +29,11 @@ import (
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/parser/terror"
 	"github.com/pingcap/tidb/domain"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/session"
 	"github.com/pingcap/tidb/store/mockstore"
 	"github.com/pingcap/tidb/util/testkit"
 	"github.com/pingcap/tidb/util/testleak"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 func TestT(t *testing.T) {

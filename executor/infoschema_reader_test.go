@@ -17,8 +17,8 @@ import (
 	. "github.com/pingcap/check"
 	"github.com/pingcap/parser/auth"
 	"github.com/pingcap/tidb/domain"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/util/testkit"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var _ = Suite(&testInfoschemaTableSuite{})

@@ -23,11 +23,11 @@ import (
 	. "github.com/pingcap/check"
 	"github.com/pingcap/parser"
 	"github.com/pingcap/tidb/domain"
-	"github.com/pingcap/tidb/kv"
 	plannercore "github.com/pingcap/tidb/planner/core"
 	"github.com/pingcap/tidb/session"
 	"github.com/pingcap/tidb/store/mockstore"
 	"github.com/pingcap/tidb/util/set"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var _ = Suite(&extractorSuite{})

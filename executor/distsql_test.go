@@ -24,12 +24,12 @@ import (
 	"github.com/pingcap/parser/model"
 	"github.com/pingcap/tidb/domain"
 	"github.com/pingcap/tidb/executor"
-	"github.com/pingcap/tidb/store/tikv"
 	"github.com/pingcap/tidb/table/tables"
 	"github.com/pingcap/tidb/tablecodec"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/mock"
 	"github.com/pingcap/tidb/util/testkit"
+	"github.com/shafreeck/tidbit/tikv"
 )
 
 func checkGoroutineExists(keyword string) bool {

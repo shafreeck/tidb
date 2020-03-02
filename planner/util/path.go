@@ -17,9 +17,9 @@ import (
 	"github.com/pingcap/parser/ast"
 	"github.com/pingcap/parser/model"
 	"github.com/pingcap/tidb/expression"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/ranger"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 // AccessPath indicates the way we access a table: by using single index, or by using multiple indexes,

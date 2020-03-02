@@ -19,8 +19,8 @@ import (
 
 	. "github.com/pingcap/check"
 	"github.com/pingcap/failpoint"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/util/testkit"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 func (s *testSessionSerialSuite) TestFailStatementCommit(c *C) {
@@ -101,7 +101,7 @@ func (s *testSessionSerialSuite) TestGetTSFailDirtyState(c *C) {
 func (s *testSessionSerialSuite) TestGetTSFailDirtyStateInretry(c *C) {
 	defer func() {
 		c.Assert(failpoint.Disable("github.com/pingcap/tidb/session/mockCommitError"), IsNil)
-		c.Assert(failpoint.Disable("github.com/pingcap/tidb/store/tikv/mockGetTSErrorInRetry"), IsNil)
+		c.Assert(failpoint.Disable("github.com/shafreeck/tidbit/tikv/mockGetTSErrorInRetry"), IsNil)
 	}()
 
 	tk := testkit.NewTestKitWithInit(c, s.store)
@@ -110,7 +110,7 @@ func (s *testSessionSerialSuite) TestGetTSFailDirtyStateInretry(c *C) {
 	c.Assert(failpoint.Enable("github.com/pingcap/tidb/session/mockCommitError", `return(true)`), IsNil)
 	// This test will mock a PD timeout error, and recover then.
 	// Just make mockGetTSErrorInRetry return true once, and then return false.
-	c.Assert(failpoint.Enable("github.com/pingcap/tidb/store/tikv/mockGetTSErrorInRetry",
+	c.Assert(failpoint.Enable("github.com/shafreeck/tidbit/tikv/mockGetTSErrorInRetry",
 		`1*return(true)->return(false)`), IsNil)
 	tk.MustExec("insert into t values (2)")
 	tk.MustQuery(`select * from t`).Check(testkit.Rows("2"))
@@ -126,8 +126,8 @@ func (s *testSessionSerialSuite) TestKillFlagInBackoff(c *C) {
 	tk.Se.GetSessionVars().KVVars.Hook = func(name string, vars *kv.Variables) {
 		killValue = atomic.LoadUint32(vars.Killed)
 	}
-	c.Assert(failpoint.Enable("github.com/pingcap/tidb/store/tikv/tikvStoreSendReqResult", `return("callBackofferHook")`), IsNil)
-	defer failpoint.Disable("github.com/pingcap/tidb/store/tikv/tikvStoreSendReqResult")
+	c.Assert(failpoint.Enable("github.com/shafreeck/tidbit/tikv/tikvStoreSendReqResult", `return("callBackofferHook")`), IsNil)
+	defer failpoint.Disable("github.com/shafreeck/tidbit/tikv/tikvStoreSendReqResult")
 	// Set kill flag and check its passed to backoffer.
 	tk.Se.GetSessionVars().Killed = 3
 	tk.MustQuery("select * from kill_backoff")

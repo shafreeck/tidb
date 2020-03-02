@@ -33,11 +33,11 @@ import (
 	"github.com/pingcap/kvproto/pkg/diagnosticspb"
 	"github.com/pingcap/sysutil"
 	"github.com/pingcap/tidb/domain"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/session"
 	"github.com/pingcap/tidb/util/pdapi"
 	"github.com/pingcap/tidb/util/testkit"
 	pmodel "github.com/prometheus/common/model"
+	"github.com/shafreeck/tidbit/kv"
 	"google.golang.org/grpc"
 )
 

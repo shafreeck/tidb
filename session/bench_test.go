@@ -23,10 +23,10 @@ import (
 
 	"github.com/pingcap/log"
 	"github.com/pingcap/tidb/domain"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/store/mockstore"
 	"github.com/pingcap/tidb/util/logutil"
 	"github.com/pingcap/tidb/util/sqlexec"
+	"github.com/shafreeck/tidbit/kv"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )

@@ -19,7 +19,7 @@ import (
 	"time"
 
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tidb/store/tikv/oracle"
+	"github.com/shafreeck/tidbit/tikv/oracle"
 )
 
 var errStopped = errors.New("stopped")

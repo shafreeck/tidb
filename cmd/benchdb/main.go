@@ -26,8 +26,8 @@ import (
 	"github.com/pingcap/parser/terror"
 	"github.com/pingcap/tidb/session"
 	"github.com/pingcap/tidb/store"
-	"github.com/pingcap/tidb/store/tikv"
 	"github.com/pingcap/tidb/util/logutil"
+	"github.com/shafreeck/tidbit/tikv"
 	"go.uber.org/zap"
 )
 

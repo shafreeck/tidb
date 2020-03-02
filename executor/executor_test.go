@@ -43,7 +43,6 @@ import (
 	"github.com/pingcap/tidb/executor"
 	"github.com/pingcap/tidb/expression"
 	"github.com/pingcap/tidb/infoschema"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/meta"
 	"github.com/pingcap/tidb/meta/autoid"
 	"github.com/pingcap/tidb/planner"
@@ -56,9 +55,6 @@ import (
 	"github.com/pingcap/tidb/statistics"
 	"github.com/pingcap/tidb/store/mockstore"
 	"github.com/pingcap/tidb/store/mockstore/mocktikv"
-	"github.com/pingcap/tidb/store/tikv"
-	"github.com/pingcap/tidb/store/tikv/oracle"
-	"github.com/pingcap/tidb/store/tikv/tikvrpc"
 	"github.com/pingcap/tidb/table"
 	"github.com/pingcap/tidb/table/tables"
 	"github.com/pingcap/tidb/tablecodec"
@@ -75,6 +71,10 @@ import (
 	"github.com/pingcap/tidb/util/testutil"
 	"github.com/pingcap/tidb/util/timeutil"
 	"github.com/pingcap/tipb/go-tipb"
+	"github.com/shafreeck/tidbit/kv"
+	"github.com/shafreeck/tidbit/tikv"
+	"github.com/shafreeck/tidbit/tikv/oracle"
+	"github.com/shafreeck/tidbit/tikv/tikvrpc"
 	"google.golang.org/grpc"
 )
 
@@ -2180,7 +2180,7 @@ func (s *testSuiteP2) TestBatchPointGetRepeatableRead(c *C) {
 }
 
 func (s *testSuite7) TestSplitRegionTimeout(c *C) {
-	c.Assert(failpoint.Enable("github.com/pingcap/tidb/store/tikv/MockSplitRegionTimeout", `return(true)`), IsNil)
+	c.Assert(failpoint.Enable("github.com/shafreeck/tidbit/tikv/MockSplitRegionTimeout", `return(true)`), IsNil)
 	tk := testkit.NewTestKit(c, s.store)
 	tk.MustExec("use test")
 	tk.MustExec("drop table if exists t")
@@ -2189,12 +2189,12 @@ func (s *testSuite7) TestSplitRegionTimeout(c *C) {
 	tk.MustExec(`set @@tidb_wait_split_region_timeout=1`)
 	// result 0 0 means split 0 region and 0 region finish scatter regions before timeout.
 	tk.MustQuery(`split table t between (0) and (10000) regions 10`).Check(testkit.Rows("0 0"))
-	c.Assert(failpoint.Disable("github.com/pingcap/tidb/store/tikv/MockSplitRegionTimeout"), IsNil)
+	c.Assert(failpoint.Disable("github.com/shafreeck/tidbit/tikv/MockSplitRegionTimeout"), IsNil)
 
 	// Test scatter regions timeout.
-	c.Assert(failpoint.Enable("github.com/pingcap/tidb/store/tikv/MockScatterRegionTimeout", `return(true)`), IsNil)
+	c.Assert(failpoint.Enable("github.com/shafreeck/tidbit/tikv/MockScatterRegionTimeout", `return(true)`), IsNil)
 	tk.MustQuery(`split table t between (0) and (10000) regions 10`).Check(testkit.Rows("10 1"))
-	c.Assert(failpoint.Disable("github.com/pingcap/tidb/store/tikv/MockScatterRegionTimeout"), IsNil)
+	c.Assert(failpoint.Disable("github.com/shafreeck/tidbit/tikv/MockScatterRegionTimeout"), IsNil)
 }
 
 func (s *testSuiteP2) TestRow(c *C) {

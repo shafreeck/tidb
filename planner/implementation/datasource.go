@@ -17,10 +17,10 @@ import (
 	"math"
 
 	"github.com/pingcap/tidb/expression"
-	"github.com/pingcap/tidb/kv"
 	plannercore "github.com/pingcap/tidb/planner/core"
 	"github.com/pingcap/tidb/planner/memo"
 	"github.com/pingcap/tidb/statistics"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 // TableDualImpl implementation of PhysicalTableDual.

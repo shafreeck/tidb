@@ -20,7 +20,6 @@ import (
 	"github.com/pingcap/parser/model"
 	"github.com/pingcap/tidb/ddl"
 	"github.com/pingcap/tidb/expression"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/sessionctx"
 	"github.com/pingcap/tidb/sessionctx/binloginfo"
 	"github.com/pingcap/tidb/table"
@@ -28,6 +27,7 @@ import (
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/mock"
 	"github.com/pingcap/tidb/util/testkit"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 func (ts *testSuite) TestPartitionBasic(c *C) {

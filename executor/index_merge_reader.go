@@ -27,7 +27,6 @@ import (
 	"github.com/pingcap/parser/terror"
 	"github.com/pingcap/tidb/distsql"
 	"github.com/pingcap/tidb/expression"
-	"github.com/pingcap/tidb/kv"
 	plannercore "github.com/pingcap/tidb/planner/core"
 	"github.com/pingcap/tidb/statistics"
 	"github.com/pingcap/tidb/table"
@@ -40,6 +39,7 @@ import (
 	"github.com/pingcap/tidb/util/set"
 	"github.com/pingcap/tidb/util/stringutil"
 	"github.com/pingcap/tipb/go-tipb"
+	"github.com/shafreeck/tidbit/kv"
 	"go.uber.org/zap"
 )
 

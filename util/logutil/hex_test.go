@@ -20,8 +20,8 @@ import (
 
 	. "github.com/pingcap/check"
 	"github.com/pingcap/kvproto/pkg/metapb"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/util/logutil"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var _ = Suite(&testHexSuite{})

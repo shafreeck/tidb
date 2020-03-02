@@ -31,7 +31,6 @@ import (
 	"github.com/pingcap/tidb/ddl"
 	"github.com/pingcap/tidb/ddl/testutil"
 	"github.com/pingcap/tidb/domain"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/meta"
 	"github.com/pingcap/tidb/session"
 	"github.com/pingcap/tidb/sessionctx"
@@ -42,6 +41,7 @@ import (
 	"github.com/pingcap/tidb/util/admin"
 	"github.com/pingcap/tidb/util/mock"
 	"github.com/pingcap/tidb/util/testkit"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 func (s *testIntegrationSuite3) TestCreateTableWithPartition(c *C) {

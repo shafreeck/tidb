@@ -21,7 +21,6 @@ import (
 
 	. "github.com/pingcap/check"
 	"github.com/pingcap/tidb/domain"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/metrics"
 	"github.com/pingcap/tidb/planner"
 	"github.com/pingcap/tidb/planner/core"
@@ -30,6 +29,7 @@ import (
 	"github.com/pingcap/tidb/util/testkit"
 	"github.com/pingcap/tidb/util/testleak"
 	dto "github.com/prometheus/client_model/go"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var _ = SerialSuites(&testPointGetSuite{})

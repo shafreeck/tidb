@@ -25,9 +25,9 @@ import (
 	"github.com/pingcap/parser/mysql"
 	"github.com/pingcap/tidb/config"
 	"github.com/pingcap/tidb/sessionctx/stmtctx"
-	"github.com/pingcap/tidb/store/tikv"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/execdetails"
+	"github.com/shafreeck/tidbit/tikv"
 )
 
 var _ = Suite(&testStmtSummarySuite{})

@@ -26,7 +26,6 @@ import (
 	"github.com/pingcap/parser/model"
 	"github.com/pingcap/parser/terror"
 	"github.com/pingcap/tidb/infoschema"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/meta/autoid"
 	"github.com/pingcap/tidb/sessionctx"
 	"github.com/pingcap/tidb/table"
@@ -34,6 +33,7 @@ import (
 	"github.com/pingcap/tidb/util"
 	"github.com/pingcap/tidb/util/profile"
 	"github.com/pingcap/tidb/util/stmtsummary"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 const (

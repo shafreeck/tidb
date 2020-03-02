@@ -33,7 +33,6 @@ import (
 	"github.com/pingcap/tidb/config"
 	"github.com/pingcap/tidb/domain"
 	"github.com/pingcap/tidb/executor"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/meta/autoid"
 	plannercore "github.com/pingcap/tidb/planner/core"
 	"github.com/pingcap/tidb/privilege/privileges"
@@ -43,7 +42,6 @@ import (
 	"github.com/pingcap/tidb/sessionctx/variable"
 	"github.com/pingcap/tidb/store/mockstore"
 	"github.com/pingcap/tidb/store/mockstore/mocktikv"
-	"github.com/pingcap/tidb/store/tikv"
 	"github.com/pingcap/tidb/table/tables"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/sqlexec"
@@ -51,6 +49,8 @@ import (
 	"github.com/pingcap/tidb/util/testleak"
 	"github.com/pingcap/tidb/util/testutil"
 	"github.com/pingcap/tipb/go-binlog"
+	"github.com/shafreeck/tidbit/kv"
+	"github.com/shafreeck/tidbit/tikv"
 	"go.etcd.io/etcd/clientv3"
 	"google.golang.org/grpc"
 )
@@ -2561,7 +2561,7 @@ func (s *testSessionSerialSuite) TestKVVars(c *C) {
 		wg.Done()
 	}()
 
-	c.Assert(failpoint.Enable("github.com/pingcap/tidb/store/tikv/mockSleepBetween2PC", "return"), IsNil)
+	c.Assert(failpoint.Enable("github.com/shafreeck/tidbit/tikv/mockSleepBetween2PC", "return"), IsNil)
 	go func() {
 		for {
 			tk.MustExec("update kvvars set b = b + 1 where a = 1")
@@ -2572,7 +2572,7 @@ func (s *testSessionSerialSuite) TestKVVars(c *C) {
 		wg.Done()
 	}()
 	wg.Wait()
-	c.Assert(failpoint.Disable("github.com/pingcap/tidb/store/tikv/mockSleepBetween2PC"), IsNil)
+	c.Assert(failpoint.Disable("github.com/shafreeck/tidbit/tikv/mockSleepBetween2PC"), IsNil)
 
 	for {
 		tk2.MustQuery("select * from kvvars")
@@ -2627,9 +2627,9 @@ func (s *testSessionSerialSuite) TestTxnRetryErrMsg(c *C) {
 	tk1.MustExec("begin")
 	tk2.MustExec("update no_retry set id = id + 1")
 	tk1.MustExec("update no_retry set id = id + 1")
-	c.Assert(failpoint.Enable("github.com/pingcap/tidb/store/tikv/ErrMockRetryableOnly", `return(true)`), IsNil)
+	c.Assert(failpoint.Enable("github.com/shafreeck/tidbit/tikv/ErrMockRetryableOnly", `return(true)`), IsNil)
 	_, err := tk1.Se.Execute(context.Background(), "commit")
-	c.Assert(failpoint.Disable("github.com/pingcap/tidb/store/tikv/ErrMockRetryableOnly"), IsNil)
+	c.Assert(failpoint.Disable("github.com/shafreeck/tidbit/tikv/ErrMockRetryableOnly"), IsNil)
 	c.Assert(err, NotNil)
 	c.Assert(kv.ErrTxnRetryable.Equal(err), IsTrue, Commentf("error: %s", err))
 	c.Assert(strings.Contains(err.Error(), "mock retryable error"), IsTrue, Commentf("error: %s", err))

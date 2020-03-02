@@ -29,13 +29,13 @@ import (
 	"github.com/pingcap/tidb/infoschema"
 	plannercore "github.com/pingcap/tidb/planner/core"
 	"github.com/pingcap/tidb/sessionctx"
-	"github.com/pingcap/tidb/store/tikv"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util"
 	"github.com/pingcap/tidb/util/sqlexec"
 	"github.com/prometheus/client_golang/api"
 	promv1 "github.com/prometheus/client_golang/api/prometheus/v1"
 	pmodel "github.com/prometheus/common/model"
+	"github.com/shafreeck/tidbit/tikv"
 )
 
 const promReadTimeout = time.Second * 10

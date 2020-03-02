@@ -19,7 +19,7 @@ import (
 
 	"github.com/pingcap/parser/mysql"
 	"github.com/pingcap/tidb/sessionctx/stmtctx"
-	"github.com/pingcap/tidb/store/tikv/oracle"
+	"github.com/shafreeck/tidbit/tikv/oracle"
 )
 
 // ProcessInfo is a struct used for show processlist statement.

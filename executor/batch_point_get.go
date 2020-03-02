@@ -18,13 +18,13 @@ import (
 
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/parser/model"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/table/tables"
 	"github.com/pingcap/tidb/tablecodec"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/chunk"
 	"github.com/pingcap/tidb/util/hack"
 	"github.com/pingcap/tidb/util/rowcodec"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 // BatchPointGetExec executes a bunch of point select queries.

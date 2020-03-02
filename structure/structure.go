@@ -16,7 +16,7 @@ package structure
 import (
 	"github.com/pingcap/parser/mysql"
 	"github.com/pingcap/parser/terror"
-	"github.com/pingcap/tidb/kv"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var (

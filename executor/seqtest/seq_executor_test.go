@@ -44,7 +44,6 @@ import (
 	ddltestutil "github.com/pingcap/tidb/ddl/testutil"
 	"github.com/pingcap/tidb/domain"
 	"github.com/pingcap/tidb/executor"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/meta/autoid"
 	plannercore "github.com/pingcap/tidb/planner/core"
 	"github.com/pingcap/tidb/session"
@@ -52,14 +51,15 @@ import (
 	"github.com/pingcap/tidb/statistics/handle"
 	"github.com/pingcap/tidb/store/mockstore"
 	"github.com/pingcap/tidb/store/mockstore/mocktikv"
-	"github.com/pingcap/tidb/store/tikv"
-	"github.com/pingcap/tidb/store/tikv/tikvrpc"
 	"github.com/pingcap/tidb/util/gcutil"
 	"github.com/pingcap/tidb/util/logutil"
 	"github.com/pingcap/tidb/util/mock"
 	"github.com/pingcap/tidb/util/testkit"
 	"github.com/pingcap/tidb/util/testleak"
 	"github.com/pingcap/tidb/util/testutil"
+	"github.com/shafreeck/tidbit/kv"
+	"github.com/shafreeck/tidbit/tikv"
+	"github.com/shafreeck/tidbit/tikv/tikvrpc"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -149,9 +149,9 @@ func (s *seqTestSuite) TestEarlyClose(c *C) {
 	}
 
 	// Goroutine should not leak when error happen.
-	c.Assert(failpoint.Enable("github.com/pingcap/tidb/store/tikv/handleTaskOnceError", `return(true)`), IsNil)
+	c.Assert(failpoint.Enable("github.com/shafreeck/tidbit/tikv/handleTaskOnceError", `return(true)`), IsNil)
 	defer func() {
-		c.Assert(failpoint.Disable("github.com/pingcap/tidb/store/tikv/handleTaskOnceError"), IsNil)
+		c.Assert(failpoint.Disable("github.com/shafreeck/tidbit/tikv/handleTaskOnceError"), IsNil)
 	}()
 	rss, err := tk.Se.Execute(ctx, "select * from earlyclose")
 	c.Assert(err, IsNil)

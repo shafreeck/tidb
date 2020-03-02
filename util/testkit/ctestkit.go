@@ -22,11 +22,11 @@ import (
 
 	"github.com/pingcap/check"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/session"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util"
 	"github.com/pingcap/tidb/util/sqlexec"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 type sessionCtxKeyType struct{}

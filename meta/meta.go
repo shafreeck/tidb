@@ -28,10 +28,10 @@ import (
 	"github.com/pingcap/parser/model"
 	"github.com/pingcap/parser/mysql"
 	"github.com/pingcap/parser/terror"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/metrics"
 	"github.com/pingcap/tidb/structure"
 	"github.com/pingcap/tidb/util/logutil"
+	"github.com/shafreeck/tidbit/kv"
 	"go.uber.org/zap"
 )
 

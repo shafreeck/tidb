@@ -19,7 +19,6 @@ import (
 	"github.com/pingcap/parser/mysql"
 	"github.com/pingcap/tidb/distsql"
 	"github.com/pingcap/tidb/expression"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/sessionctx"
 	"github.com/pingcap/tidb/sessionctx/stmtctx"
 	"github.com/pingcap/tidb/table"
@@ -28,6 +27,7 @@ import (
 	"github.com/pingcap/tidb/util/chunk"
 	"github.com/pingcap/tidb/util/codec"
 	"github.com/pingcap/tidb/util/rowcodec"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 type memIndexReader struct {

@@ -21,7 +21,6 @@ import (
 
 	"github.com/pingcap/errors"
 	"github.com/pingcap/parser/model"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/owner"
 	"github.com/pingcap/tidb/sessionctx"
 	"github.com/pingcap/tidb/sessionctx/variable"
@@ -32,6 +31,7 @@ import (
 	"github.com/pingcap/tidb/util/sqlexec"
 	"github.com/pingcap/tidb/util/stringutil"
 	"github.com/pingcap/tipb/go-binlog"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var _ sessionctx.Context = (*Context)(nil)

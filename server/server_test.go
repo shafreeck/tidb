@@ -35,9 +35,9 @@ import (
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/log"
 	tmysql "github.com/pingcap/parser/mysql"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/util/logutil"
 	"github.com/pingcap/tidb/util/printer"
+	"github.com/shafreeck/tidbit/kv"
 	"go.uber.org/zap"
 )
 

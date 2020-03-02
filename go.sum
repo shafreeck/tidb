@@ -218,6 +218,7 @@ github.com/pingcap/pd v1.1.0-beta.0.20200106144140-f5a7aa985497/go.mod h1:cfT/xu
 github.com/pingcap/sysutil v0.0.0-20191216090214-5f9620d22b3b/go.mod h1:EB/852NMQ+aRKioCpToQ94Wl7fktV+FNnxf3CX/TTXI=
 github.com/pingcap/sysutil v0.0.0-20200206130906-2bfa6dc40bcd h1:k7CIHMFVKjHsda3PKkiN4zv++NEnexlUwiJEhryWpG0=
 github.com/pingcap/sysutil v0.0.0-20200206130906-2bfa6dc40bcd/go.mod h1:EB/852NMQ+aRKioCpToQ94Wl7fktV+FNnxf3CX/TTXI=
+github.com/pingcap/tidb v1.1.0-beta.0.20200302094322-77dcdc546d56/go.mod h1:untj2MAKBepgebXTYWRsEW54UvngfHxn2zUy6gp8ITo=
 github.com/pingcap/tidb-tools v3.0.6-0.20191106033616-90632dda3863+incompatible h1:H1jg0aDWz2SLRh3hNBo2HFtnuHtudIUvBumU7syRkic=
 github.com/pingcap/tidb-tools v3.0.6-0.20191106033616-90632dda3863+incompatible/go.mod h1:XGdcy9+yqlDSEMTpOXnwf3hiTeqrV6MN/u1se9N8yIM=
 github.com/pingcap/tipb v0.0.0-20190428032612-535e1abaa330/go.mod h1:RtkHW8WbcNxj8lsbzjaILci01CtYnYbIkQhjyZWrWVI=
@@ -247,6 +248,9 @@ github.com/rogpeppe/fastuuid v1.2.0/go.mod h1:jVj6XXZzXRy/MSR5jhDC/2q6DgLz+nrA6L
 github.com/rogpeppe/go-internal v1.3.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFRclV5y23lUDJ4=
 github.com/sergi/go-diff v1.0.1-0.20180205163309-da645544ed44 h1:tB9NOR21++IjLyVx3/PCPhWMwqGNCMQEH96A6dMZ/gc=
 github.com/sergi/go-diff v1.0.1-0.20180205163309-da645544ed44/go.mod h1:0CfEIISq7TuYL3j771MWULgwwjU+GofnZX9QAmXWZgo=
+github.com/shafreeck/tidbit v0.0.0-20200302100840-ba0254aca338 h1:VnGam7TSQjl6acSP5f0h2btXEGJ39qfQE2AE9t6jKzU=
+github.com/shafreeck/tidbit v0.0.0-20200302120141-c6263e41365a h1:GJqffwUJZ+HoRRdZ1/Cl5Z5gdjqvaj1WlWHD2ms8zyU=
+github.com/shafreeck/tidbit v0.0.0-20200302120141-c6263e41365a/go.mod h1:fYkd3ID9+gwfTzo3RH5VNbV9cm18jSe7s/ywFJgDdec=
 github.com/shirou/gopsutil v2.19.10+incompatible h1:lA4Pi29JEVIQIgATSeftHSY0rMGI9CLrl2ZvDLiahto=
 github.com/shirou/gopsutil v2.19.10+incompatible/go.mod h1:5b4v6he4MtMOwMlS0TUMTu2PcXUg8+E1lC7eC3UO/RA=
 github.com/shirou/w32 v0.0.0-20160930032740-bb4de0191aa4 h1:udFKJ0aHUL60LboW/A+DfgoHVedieIzIXE8uylPue0U=

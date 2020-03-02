@@ -57,7 +57,6 @@ import (
 	"github.com/pingcap/parser/mysql"
 	"github.com/pingcap/parser/terror"
 	"github.com/pingcap/tidb/executor"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/metrics"
 	"github.com/pingcap/tidb/plugin"
 	"github.com/pingcap/tidb/sessionctx"
@@ -69,6 +68,7 @@ import (
 	"github.com/pingcap/tidb/util/memory"
 	"github.com/pingcap/tidb/util/sqlexec"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/shafreeck/tidbit/kv"
 	"go.uber.org/zap"
 )
 

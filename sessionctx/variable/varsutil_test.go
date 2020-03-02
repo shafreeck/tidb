@@ -22,9 +22,9 @@ import (
 	"github.com/pingcap/parser/mysql"
 	"github.com/pingcap/parser/terror"
 	"github.com/pingcap/tidb/config"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/types"
 	"github.com/pingcap/tidb/util/testleak"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 var _ = Suite(&testVarsutilSuite{})

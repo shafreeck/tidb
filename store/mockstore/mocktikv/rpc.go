@@ -32,8 +32,8 @@ import (
 	"github.com/pingcap/kvproto/pkg/kvrpcpb"
 	"github.com/pingcap/kvproto/pkg/metapb"
 	"github.com/pingcap/parser/terror"
-	"github.com/pingcap/tidb/kv"
-	"github.com/pingcap/tidb/store/tikv/tikvrpc"
+	"github.com/shafreeck/tidbit/kv"
+	"github.com/shafreeck/tidbit/tikv/tikvrpc"
 )
 
 // For gofail injection.

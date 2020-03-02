@@ -36,7 +36,6 @@ import (
 	"github.com/pingcap/tidb/expression"
 	"github.com/pingcap/tidb/expression/aggregation"
 	"github.com/pingcap/tidb/infoschema"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/metrics"
 	"github.com/pingcap/tidb/planner/property"
 	"github.com/pingcap/tidb/privilege"
@@ -49,6 +48,7 @@ import (
 	util2 "github.com/pingcap/tidb/util"
 	"github.com/pingcap/tidb/util/chunk"
 	"github.com/pingcap/tidb/util/plancodec"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 const (

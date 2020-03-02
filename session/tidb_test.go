@@ -25,7 +25,6 @@ import (
 	. "github.com/pingcap/check"
 	"github.com/pingcap/parser/auth"
 	"github.com/pingcap/tidb/domain"
-	"github.com/pingcap/tidb/kv"
 	"github.com/pingcap/tidb/planner/core"
 	"github.com/pingcap/tidb/store/mockstore"
 	"github.com/pingcap/tidb/tablecodec"
@@ -33,6 +32,7 @@ import (
 	"github.com/pingcap/tidb/util/logutil"
 	"github.com/pingcap/tidb/util/sqlexec"
 	"github.com/pingcap/tidb/util/testleak"
+	"github.com/shafreeck/tidbit/kv"
 )
 
 func TestT(t *testing.T) {

@@ -21,8 +21,8 @@ import (
 	"github.com/pingcap/tidb/domain"
 	"github.com/pingcap/tidb/infoschema"
 	"github.com/pingcap/tidb/statistics"
-	"github.com/pingcap/tidb/store/tikv/oracle"
 	"github.com/pingcap/tidb/types"
+	"github.com/shafreeck/tidbit/tikv/oracle"
 )
 
 func (e *ShowExec) fetchShowStatsMeta() error {
