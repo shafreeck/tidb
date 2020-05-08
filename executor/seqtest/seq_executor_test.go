@@ -149,9 +149,9 @@ func (s *seqTestSuite) TestEarlyClose(c *C) {
 	}
 
 	// Goroutine should not leak when error happen.
-	c.Assert(failpoint.Enable("github.com/shafreeck/tidbit/tikv/handleTaskOnceError", `return(true)`), IsNil)
+	c.Assert(tikv.HandleTaskOnceError.Enable(`return(true)`), IsNil)
 	defer func() {
-		c.Assert(failpoint.Disable("github.com/shafreeck/tidbit/tikv/handleTaskOnceError"), IsNil)
+		c.Assert(tikv.HandleTaskOnceError.Disable(), IsNil)
 	}()
 	rss, err := tk.Se.Execute(ctx, "select * from earlyclose")
 	c.Assert(err, IsNil)

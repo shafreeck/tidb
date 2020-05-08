@@ -21,6 +21,7 @@ import (
 	"github.com/pingcap/failpoint"
 	"github.com/pingcap/tidb/util/testkit"
 	"github.com/shafreeck/tidbit/kv"
+	"github.com/shafreeck/tidbit/tikv"
 )
 
 func (s *testSessionSerialSuite) TestFailStatementCommit(c *C) {
@@ -126,8 +127,8 @@ func (s *testSessionSerialSuite) TestKillFlagInBackoff(c *C) {
 	tk.Se.GetSessionVars().KVVars.Hook = func(name string, vars *kv.Variables) {
 		killValue = atomic.LoadUint32(vars.Killed)
 	}
-	c.Assert(failpoint.Enable("github.com/shafreeck/tidbit/tikv/tikvStoreSendReqResult", `return("callBackofferHook")`), IsNil)
-	defer failpoint.Disable("github.com/shafreeck/tidbit/tikv/tikvStoreSendReqResult")
+	c.Assert(tikv.TiKVStoreSendReqResult.Enable(`return("callBackofferHook")`), IsNil)
+	defer tikv.TiKVStoreSendReqResult.Disable()
 	// Set kill flag and check its passed to backoffer.
 	tk.Se.GetSessionVars().Killed = 3
 	tk.MustQuery("select * from kill_backoff")
